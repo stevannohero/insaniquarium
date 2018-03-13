@@ -9,12 +9,12 @@
 #include "Point.hpp"
 #include "LinkedList.hpp"
 
-class Guppy: public Fish, public Entity {
+class Guppy : public Fish, public Entity {
 	public:
-	Guppy();
-	
-	virtual void eat();
-	virtual void spawnCoin();
+	Guppy() : Fish(1, 10, 10, 10);
 
-	private:	
+	// methods
+	void eat();
+	void checkGrowth();
+	void spawnCoin();
 }

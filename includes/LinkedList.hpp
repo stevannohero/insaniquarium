@@ -9,6 +9,7 @@
 #include "Point.hpp"
 #include "LinkedList.hpp"
 
+template <class T>
 class LinkedList {
 	public:
 

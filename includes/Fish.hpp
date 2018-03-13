@@ -9,32 +9,37 @@
 #include "Point.hpp"
 #include "LinkedList.hpp"
 
-class Fish {
-	public:
-	Fish();
-		
+class Fish : public Entity {
+	public:		
 	// setter and getter
 	int getFishState() const;
 	int getFoodsToGrow() const;
 	int getCoinTime() const;
+	int getCoinValue() const;
+	int getFishValue() const;
 	bool getFull() const;	
 	bool getRight() const;
 
-	void setState(int);
-	void setFoodsToGrow(int);	
+	void setFishState(int state);
+	void setFoodsToGrow(int foods);
+	void setCoinTime(int cTime);
+	void setCoinValue(int value);
+	void setFishValue(int value);
 	void setFull(bool);
-	void setCoinTime(int);
 	void setRight(bool);
 
+	protected:
+	Fish(int s, int f, int cTime, int cValue, int fValue) : Entity();
 	// methods
-	virtual void eat();
-	void checkGrowth();
-	virtual void spawnCoin();
+	virtual void eat() = 0;
+	virtual void checkGrowth() = 0;
+	virtual void spawnCoin() = 0;
 
-	private:
-	int fishState;
+	int state;
 	int foodsToGrow; // remaining foods to make fish grow
-	bool isFull;
 	int coinTime; // time for fish to produce coin
+	int coinValue;
+	int fishValue;
+	bool isFull;
 	bool isRight; // fish is facing right
 }

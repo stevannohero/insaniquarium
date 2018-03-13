@@ -12,14 +12,19 @@
 // Abstract Base Class
 class Entity {
 	public:
-	virtual void move() = 0;
-	Point getClosestEntity(T);
-	
+	Entity(); // position = (0,0)
+	Entity(int, int) // position = (x,y)
+
 	// setter and getter
+	Point getPosition() const;
 	int getVelocity() const;
 
-	void setVelocity();
+	void setPosition(Point);
+	void setVelocity(int);
 
+	// methods
+	void move();
+	
 	private:
 	Point position;
 	int velocity;
