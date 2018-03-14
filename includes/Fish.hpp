@@ -1,3 +1,14 @@
+/**
+ * \class Fish
+ *
+ * Kelas Fish merupakan suatu kelas abstrak untuk objek fish
+ * Menangani seluruh method yang berlaku di seluruh kelas fish dan turunannya
+ *
+ */
+
+#ifndef FISH_H
+#define FISH_H
+
 #include "Cell.hpp"
 #include "Entity.hpp"
 #include "Fish.hpp"
@@ -12,12 +23,26 @@
 class Fish : public Entity {
 	public:		
 	// setter and getter
+	
+	///Mendapatkan informasi tahap pertumbuhan dari suatu Fish
 	int getFishState() const;
+
+	///Mendapatkan informasi sejumlah makanan yang harus dimakan Fish untuk memasuki tahap pertumbuhan selanjutnya
 	int getFoodsToGrow() const;
+
+	///Mendapatkan informasi waktu koin
 	int getCoinTime() const;
+
+	///Mendapatkan informasi mengenai nilai koin yang dihasilkan suatu jenis Fish tertentu 
 	int getCoinValue() const;
+
+	
 	int getFishValue() const;
+
+	///Mendapatkan informasi apakah Fish dalam keadaan kenyang atau lapar
 	bool getFull() const;	
+
+	///Mendapatkan informasi apakah suatu Fish menghadap ke kanan atau kiri
 	bool getRight() const;
 
 	void setFishState(int state);
@@ -43,3 +68,5 @@ class Fish : public Entity {
 	bool isFull;
 	bool isRight; // fish is facing right
 }
+
+#endif
