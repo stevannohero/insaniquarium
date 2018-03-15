@@ -1,3 +1,13 @@
+/**
+ * \class Piranha
+ *
+ * Kelas Piranha merupakan kelas turunan dari Fish dengan spesialisasi sifat-sifat Piranha
+ *
+ */
+
+#ifndef PIRANHA_H
+#define PIRANHA_H
+
 #include "Cell.hpp"
 #include "Entity.hpp"
 #include "Guppy.hpp"
@@ -11,11 +21,18 @@
 // Multiple Inherintance
 class Piranha: public Guppy, public Entity {
 	public:
+
+	///default ctor
 	Piranha();
 	
+	///method untuk makan
 	void eat();
-	void checkGrowth();
-	void spawnCoin();
 
-	private:
+	///method untuk mengetahui tahap pertumbuhan Piranha
+	void checkGrowth();
+
+	///method untuk menghasilkan koin
+	void spawnCoin();
 }
+
+#endif

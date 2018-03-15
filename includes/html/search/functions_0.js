@@ -1,10 +1,5 @@
 var searchData=
 [
-  ['getclosestentity',['getClosestEntity',['../classAquarium.html#aa1389622ce9474dbdc955e04b6efd1dc',1,'Aquarium']]],
-  ['getcointime',['getCoinTime',['../classFish.html#aaeaf482b0fe949b02cd938dec4f4212d',1,'Fish']]],
-  ['getcoinvalue',['getCoinValue',['../classFish.html#a111347fa2d2fb3ff52c697dd05ff2794',1,'Fish']]],
-  ['getfishstate',['getFishState',['../classFish.html#ab9c2e99efae1e293e660b02dfd6b3ec3',1,'Fish']]],
-  ['getfoodstogrow',['getFoodsToGrow',['../classFish.html#a6fec94dae5da20c2649e5cb4eab6288b',1,'Fish']]],
-  ['getfull',['getFull',['../classFish.html#afab92c9739af9d442b9e1623fb56a8d1',1,'Fish']]],
-  ['getright',['getRight',['../classFish.html#aa2dfabcc7a6845d0bec12e77d234a269',1,'Fish']]]
+  ['checkgrowth',['checkGrowth',['../classFish.html#a45d7032d8c2eacedabb8a28799399adb',1,'Fish::checkGrowth()'],['../classGuppy.html#a06ceefb07ac8f6d590f8343c93c1edd9',1,'Guppy::checkGrowth()'],['../classPiranha.html#ad35beb897ca7281e3792faf8211e39a3',1,'Piranha::checkGrowth()']]],
+  ['coin',['Coin',['../classCoin.html#a94b2130e2d3ac956ba47271ad81c64f5',1,'Coin::Coin()'],['../classCoin.html#aa6bd6ccd1fe41c519112b077e54a603a',1,'Coin::Coin(int)']]]
 ];

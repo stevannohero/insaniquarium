@@ -1,3 +1,13 @@
+/**
+ * \class Food
+ *
+ * Kelas Food menangani objek makanan yang dimakan oleh objek Fish
+ *
+ */
+
+#ifndef FOOD_H
+#define FOOD_H
+
 #include "Cell.hpp"
 #include "Entity.hpp"
 #include "Fish.hpp"
@@ -11,10 +21,15 @@
 
 class Food : public Entity {
 	public:
+	///default ctor
 	Food();
+	
+	///ctor dengan paramater
 	Food(int, int);
 
+	///method untuk pergerakan makanan
 	virtual void move();
 	
-	private:
 }
+
+#endif
