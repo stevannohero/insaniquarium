@@ -10,7 +10,6 @@
 #ifndef AQUARIUM_H
 #define AQUARIUM_H
 
-#include "Cell.hpp"
 #include "Entity.hpp"
 #include "Guppy.hpp"
 #include "Piranha.hpp"
@@ -40,9 +39,5 @@ class Aquarium {
 	LinkedList<Coin> coins;		///< list yang menyimpan seluruh entitas koin
 };
 
-template<class T>
-T Aquarium::getClosestEntity(T) {
-	// ...
-};
 
 #endif
