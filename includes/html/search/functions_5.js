@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['operator_3d',['operator=',['../classPoint.html#aecfc6968998d806384e24cd93072b024',1,'Point']]]
+  ['isempty',['IsEmpty',['../classLinkedList.html#ac5a0d903d22d1157e98b6d3c182e1c74',1,'LinkedList']]]
 ];

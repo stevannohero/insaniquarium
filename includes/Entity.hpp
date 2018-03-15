@@ -8,16 +8,9 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
-#include "Cell.hpp"
+
 #include "Entity.hpp"
-#include "Fish.hpp"
-#include "Guppy.hpp"
-#include "Piranha.hpp"
-#include "Snail.hpp"
-#include "Food.hpp"
-#include "Coin.hpp"
 #include "Point.hpp"
-#include "LinkedList.hpp"
 
 // Abstract Base Class
 class Entity {
@@ -27,7 +20,7 @@ class Entity {
 	Entity(); // position = (0,0)
 
 	///ctor dengan dua parameter integer untuk menentukan posisi objek di akuarium
-	Entity(int, int) // position = (x,y)
+	Entity(int, int); // position = (x,y)
 
 	// setter and getter
 
@@ -50,6 +43,6 @@ class Entity {
 	private:
 	Point position;		///< menyimpan data posisi objek
 	int velocity; 		///< menyimpan nilai kecepatan objek untuk bergerak
-}
+};
 
 #endif

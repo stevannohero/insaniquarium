@@ -38,11 +38,11 @@ class Aquarium {
 	Snail snail;			///< siput
 	LinkedList<Food> foods;		///< list yang menyimpan seluruh entitas makanan ikan
 	LinkedList<Coin> coins;		///< list yang menyimpan seluruh entitas koin
-}
+};
 
 template<class T>
 T Aquarium::getClosestEntity(T) {
 	// ...
-}
+};
 
 #endif

@@ -8,16 +8,7 @@
 #ifndef POINT_H
 #define POINT_H
 
-#include "Cell.hpp"
-#include "Entity.hpp"
-#include "Fish.hpp"
-#include "Guppy.hpp"
-#include "Piranha.hpp"
-#include "Snail.hpp"
-#include "Food.hpp"
-#include "Coin.hpp"
 #include "Point.hpp"
-#include "LinkedList.hpp"
 
 class Point {
 	public:
@@ -49,6 +40,6 @@ class Point {
 	
 	private:
 	int x, y; 
-}
+};
 
 #endif

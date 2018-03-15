@@ -1,3 +1,14 @@
+/**
+ * \class LinkedList
+ *
+ * Kelas generik linkedlist
+ *
+ */
+
+
+#ifndef LINKEDLIST_H
+#define LINKEDLIST_H
+
 #include "Point.hpp"
 #include <iostream>
 using namespace std;
@@ -11,19 +22,22 @@ struct node {
 template <class T>
 class LinkedList {
 	public:
-    node<T>* first;
+    	node<T>* first;
 	node<T>* last;
 
 	/* ctor */
+	///default ctor
 	LinkedList<T>() {
 		first = NULL;
 		last = NULL;
 	}
 
+	///check IsEmpty list
 	bool IsEmpty() {
         return ((first == NULL) && (last == NULL));
 	}
 
+	///menambahkan data ke list
 	void add(T data) {
 		if(!first) {
             /* first == NULL, list masih kosong */
@@ -50,6 +64,7 @@ class LinkedList {
 		}
 	}
 
+	///mendapatkan nilai dari list berdasarkan index
 	T get(int index) {
 		if(index == 0) {
 			/* Element ke 1 indexnya 0 */
@@ -64,6 +79,7 @@ class LinkedList {
 		}
 	}
 
+	///mencari suatu elemen di list
 	int find(T data) {
         bool found;
         found = false;
@@ -87,6 +103,7 @@ class LinkedList {
         }
     }
 
+	///menghapus elemen list
 	void remove(T data) {
         int a;
         a = find(data);
@@ -116,9 +133,12 @@ class LinkedList {
         }
     }
 
-    T operator[](int index) {
+	///overloading operator[]
+   	T operator[](int index) {
 		return get(index);
 	}
 
 
 };
+
+#endif

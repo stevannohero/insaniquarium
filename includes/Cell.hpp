@@ -25,6 +25,6 @@ class Cell {
 
 	private:
 
-}
+};
 
 #endif

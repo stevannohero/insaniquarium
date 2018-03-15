@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['eat',['eat',['../classGuppy.html#afe934262a0988e4ad041f4ed3a1a7e02',1,'Guppy::eat()'],['../classPiranha.html#ac48c0256edd56c427b3d82f6e0d4df82',1,'Piranha::eat()']]],
-  ['entity',['Entity',['../classEntity.html#a980f368aa07ce358583982821533a54a',1,'Entity::Entity()'],['../classEntity.html#a82c4f38635d70e83cbf17332e2abddc6',1,'Entity::Entity(int, int) Point getPosition() const']]]
+  ['checkgrowth',['checkGrowth',['../classFish.html#a45d7032d8c2eacedabb8a28799399adb',1,'Fish::checkGrowth()'],['../classGuppy.html#a06ceefb07ac8f6d590f8343c93c1edd9',1,'Guppy::checkGrowth()'],['../classPiranha.html#ad35beb897ca7281e3792faf8211e39a3',1,'Piranha::checkGrowth()']]],
+  ['coin',['Coin',['../classCoin.html#a94b2130e2d3ac956ba47271ad81c64f5',1,'Coin::Coin()'],['../classCoin.html#aa6bd6ccd1fe41c519112b077e54a603a',1,'Coin::Coin(int)']]]
 ];

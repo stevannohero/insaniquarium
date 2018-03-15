@@ -73,11 +73,10 @@ Inheritance diagram for Entity:</div>
 <div class="center"><img src="classEntity__inherit__graph.png" border="0" usemap="#Entity_inherit__map" alt="Inheritance graph"/></div>
 <map name="Entity_inherit__map" id="Entity_inherit__map">
 <area shape="rect" id="node2" href="classCoin.html" title="Coin" alt="" coords="5,80,55,107"/>
-<area shape="rect" id="node3" href="classFish.html" title="Fish" alt="" coords="79,80,125,107"/>
-<area shape="rect" id="node4" href="classGuppy.html" title="Guppy" alt="" coords="116,155,176,181"/>
-<area shape="rect" id="node5" href="classPiranha.html" title="Piranha" alt="" coords="146,229,213,256"/>
-<area shape="rect" id="node6" href="classFood.html" title="Food" alt="" coords="251,80,302,107"/>
-<area shape="rect" id="node7" href="classSnail.html" title="Snail" alt="" coords="326,80,377,107"/>
+<area shape="rect" id="node3" href="classFood.html" title="Food" alt="" coords="79,80,130,107"/>
+<area shape="rect" id="node4" href="classGuppy.html" title="Guppy" alt="" coords="155,80,215,107"/>
+<area shape="rect" id="node5" href="classPiranha.html" title="Piranha" alt="" coords="239,80,306,107"/>
+<area shape="rect" id="node6" href="classSnail.html" title="Snail" alt="" coords="330,80,381,107"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -87,9 +86,14 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#a980f368aa07ce358583982821533a54a">Entity</a> ()</td></tr>
 <tr class="memdesc:a980f368aa07ce358583982821533a54a"><td class="mdescLeft">&#160;</td><td class="mdescRight">default ctor. menciptakan objek di lokasi (0,0) di akuarium <br /></td></tr>
 <tr class="separator:a980f368aa07ce358583982821533a54a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82c4f38635d70e83cbf17332e2abddc6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#a82c4f38635d70e83cbf17332e2abddc6">Entity</a> (int, int) <a class="el" href="classPoint.html">Point</a> getPosition() const</td></tr>
-<tr class="memdesc:a82c4f38635d70e83cbf17332e2abddc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">ctor dengan dua parameter integer untuk menentukan posisi objek di akuarium  <a href="#a82c4f38635d70e83cbf17332e2abddc6">More...</a><br /></td></tr>
-<tr class="separator:a82c4f38635d70e83cbf17332e2abddc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dba4ae4a996838f4c0ba1e86a41c181"><td class="memItemLeft" align="right" valign="top"><a id="a1dba4ae4a996838f4c0ba1e86a41c181"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#a1dba4ae4a996838f4c0ba1e86a41c181">Entity</a> (int, int)</td></tr>
+<tr class="memdesc:a1dba4ae4a996838f4c0ba1e86a41c181"><td class="mdescLeft">&#160;</td><td class="mdescRight">ctor dengan dua parameter integer untuk menentukan posisi objek di akuarium <br /></td></tr>
+<tr class="separator:a1dba4ae4a996838f4c0ba1e86a41c181"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0db2ab8dd08e0da409133786803bd4e0"><td class="memItemLeft" align="right" valign="top"><a id="a0db2ab8dd08e0da409133786803bd4e0"></a>
+<a class="el" href="classPoint.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#a0db2ab8dd08e0da409133786803bd4e0">getPosition</a> () const</td></tr>
+<tr class="memdesc:a0db2ab8dd08e0da409133786803bd4e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter posisi objek di akuarium <br /></td></tr>
+<tr class="separator:a0db2ab8dd08e0da409133786803bd4e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8e667975506fcad1d4d3f0715c4df51"><td class="memItemLeft" align="right" valign="top"><a id="ac8e667975506fcad1d4d3f0715c4df51"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#ac8e667975506fcad1d4d3f0715c4df51">getVelocity</a> () const</td></tr>
 <tr class="memdesc:ac8e667975506fcad1d4d3f0715c4df51"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter kecepatan dari suatu objek entity <br /></td></tr>
@@ -109,39 +113,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Kelas <a class="el" href="classEntity.html">Entity</a> merupakan Abstract Base Class atau Interface </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a82c4f38635d70e83cbf17332e2abddc6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a82c4f38635d70e83cbf17332e2abddc6">&#9670;&nbsp;</a></span>Entity()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Entity::Entity </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>ctor dengan dua parameter integer untuk menentukan posisi objek di akuarium </p>
-<p>getter posisi objek di akuarium </p>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="Entity_8hpp_source.html">Entity.hpp</a></li>
 </ul>
 </div><!-- contents -->

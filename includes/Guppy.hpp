@@ -8,22 +8,19 @@
 #ifndef GUPPY_H
 #define GUPPY_H
 
-#include "Cell.hpp"
+
 #include "Entity.hpp"
 #include "Fish.hpp"
 #include "Guppy.hpp"
-#include "Piranha.hpp"
-#include "Snail.hpp"
-#include "Food.hpp"
-#include "Coin.hpp"
 #include "Point.hpp"
-#include "LinkedList.hpp"
+#include "Coin.hpp"
+
 
 class Guppy : public Fish, public Entity {
 	public:
 
 	///default ctor
-	Guppy() : Fish(1, 10, 10, 10);
+	Guppy();
 
 	// methods
 
@@ -35,6 +32,6 @@ class Guppy : public Fish, public Entity {
 
 	///method untuk menghasilkan koin
 	void spawnCoin();
-}
+};
 
 #endif

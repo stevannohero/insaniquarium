@@ -9,18 +9,12 @@
 #ifndef FISH_H
 #define FISH_H
 
-#include "Cell.hpp"
+
 #include "Entity.hpp"
 #include "Fish.hpp"
-#include "Guppy.hpp"
-#include "Piranha.hpp"
-#include "Snail.hpp"
-#include "Food.hpp"
-#include "Coin.hpp"
 #include "Point.hpp"
-#include "LinkedList.hpp"
 
-class Fish : public Entity {
+class Fish {
 	public:		
 	// setter and getter
 	
@@ -68,7 +62,7 @@ class Fish : public Entity {
 
 	protected:
 	///ctor dengan parameter
-	Fish(int s, int f, int cTime, int cValue, int fValue) : Entity();
+	Fish(int s, int f, int cTime, int cValue, int fValue);
 	
 	// methods
 
@@ -88,6 +82,6 @@ class Fish : public Entity {
 	int fishValue; 		///<nilai ikan, digunakan untuk menentukan nilai koin yang dihasilkannya
 	bool isFull; 		///<boolean apakah ikan lapar atau tidak
 	bool isRight; 		///<boolean arah hadap ikan
-}
+};
 
 #endif

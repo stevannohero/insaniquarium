@@ -8,18 +8,14 @@
 #ifndef PIRANHA_H
 #define PIRANHA_H
 
-#include "Cell.hpp"
 #include "Entity.hpp"
-#include "Guppy.hpp"
 #include "Piranha.hpp"
-#include "Snail.hpp"
-#include "Food.hpp"
 #include "Coin.hpp"
 #include "Point.hpp"
-#include "LinkedList.hpp"
+#include "Guppy.hpp"
 
 // Multiple Inherintance
-class Piranha: public Guppy, public Entity {
+class Piranha: public Fish, public Entity {
 	public:
 
 	///default ctor
@@ -33,6 +29,6 @@ class Piranha: public Guppy, public Entity {
 
 	///method untuk menghasilkan koin
 	void spawnCoin();
-}
+};
 
 #endif
