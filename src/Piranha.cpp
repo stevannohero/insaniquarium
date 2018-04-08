@@ -6,3 +6,11 @@ void Piranha::eat() {
         isFull = true;
     }*/
 }
+
+void Piranha::checkGrowth() {
+
+}
+
+void Piranha::spawnCoin() {
+    
+}

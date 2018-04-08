@@ -11,6 +11,7 @@
 
 #include "Entity.hpp"
 #include "Point.hpp"
+#include <cstdlib>
 
 // Abstract Base Class
 class Entity {

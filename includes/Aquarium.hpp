@@ -29,14 +29,14 @@ class Aquarium {
 	template<class T>
 	T getClosestEntity(T);
 
-	private:
-	const int MAX_X; 		///< max nilai X untuk matriks
-	const int MAX_Y;		///< max nilai Y untuk matriks
-	int cells[][];			///< matriks 2D representasi akuarium
-	LinkedList<Fish> fishes; 	///< list yang menyimpan seluruh entitas ikan
-	Snail snail;			///< siput
-	LinkedList<Food> foods;		///< list yang menyimpan seluruh entitas makanan ikan
-	LinkedList<Coin> coins;		///< list yang menyimpan seluruh entitas koin
+	public:
+	static const int MAX_X = 640; 	///< max nilai X untuk matriks
+	static const int MAX_Y = 480;	///< max nilai Y untuk matriks
+	LinkedList<Guppy*> guppies; 	///< list yang menyimpan seluruh entitas ikan
+	LinkedList<Piranha*> piranhas; 	///< list yang menyimpan seluruh entitas ikan
+	Snail* snail;					///< siput
+	LinkedList<Food*> foods;		///< list yang menyimpan seluruh entitas makanan ikan
+	LinkedList<Coin*> coins;		///< list yang menyimpan seluruh entitas koin
 };
 
 

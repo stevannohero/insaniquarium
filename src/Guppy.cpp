@@ -1,7 +1,10 @@
 #include "../includes/Guppy.hpp"
+#include "../includes/Aquarium.hpp"
 
 Guppy::Guppy() : Fish(1, 10, 10, 10, 10){
-    
+    int x = rand() % Aquarium::MAX_X;
+    int y = rand() % Aquarium::MAX_Y;
+    setPosition(Point(x, y));
 }
 // methods
 void Guppy::eat() {
