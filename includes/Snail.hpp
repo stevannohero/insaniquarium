@@ -13,6 +13,7 @@
 #include "Entity.hpp"
 #include "Snail.hpp"
 #include "Point.hpp"
+#include "Aquarium.hpp"
 
 
 class Snail : public Entity {
@@ -22,7 +23,7 @@ class Snail : public Entity {
 	Snail();
 
 	///method gerak Snail. virtual dari method move di Entity
-	virtual void move();		
+	void move(double sec_time);		
 
 };
 

@@ -29,7 +29,7 @@ class Entity {
 	Point getPosition() const;
 
 	///getter kecepatan dari suatu objek entity
-	int getVelocity() const;
+	double getVelocity() const;
 
 	///setter posisi objek
 	void setPosition(Point);
@@ -43,7 +43,7 @@ class Entity {
 	
 	private:
 	Point position;		///< menyimpan data posisi objek
-	int velocity; 		///< menyimpan nilai kecepatan objek untuk bergerak
+	double velocity; 		///< menyimpan nilai kecepatan objek untuk bergerak
 };
 
 #endif

@@ -4,7 +4,7 @@
 Entity::Entity() {
 	position.setX(0);
 	position.setY(0);
-	velocity = 10;
+	velocity = 10.0;
 } // position = (0,0)
 
 Entity::Entity(int _x, int _y) {
@@ -18,7 +18,7 @@ Point Entity::getPosition() const {
 	return position;
 }
 
-int Entity::getVelocity() const {
+double Entity::getVelocity() const {
 	return velocity;
 }
 
