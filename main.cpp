@@ -91,10 +91,10 @@ int main( int argc, char* args[] )
         clear_screen();
         draw_text("Panah untuk bergerak, r untuk reset, x untuk keluar, g untuk spawn guppy", 18, 10, 10, 0, 0, 0);
         draw_text(fps_text, 18, 10, 30, 0, 0, 0);
-        draw_image("ikan.png", cx, cy);
+        draw_image("img/ikan.png", cx, cy);
         int i=0;
         while (i < nGuppies) {
-            draw_image("ikan.png", aquarium.guppies[i]->getPosition().getX(), aquarium.guppies[i]->getPosition().getY());
+            draw_image("img/ikan.png", aquarium.guppies[i]->getPosition().getX(), aquarium.guppies[i]->getPosition().getY());
             i++;
         }
         update_screen();
