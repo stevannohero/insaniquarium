@@ -31,7 +31,7 @@ class Coin : public Entity {
 	
 	// method
 	///method untuk koin bergerak
-	virtual void move();		
+	void move(double sec_time);		
 	
 	private:
 	int value;	 ///<nilai koin
