@@ -1,5 +1,6 @@
 #include "../includes/Coin.hpp"
 #include "../includes/Aquarium.hpp"
+#include <string>
 
 Coin::Coin():Entity(Aquarium::MAX_X/2, 100) {
 	value = 0;
@@ -19,12 +20,6 @@ void Coin::setValue(int _val) {
 }
 
 void Coin::move(double sec_time) {
-	double posx = this->getPosition().getX();
-	double posy = this->getPosition().getY();
-	double v = getVelocity()*sec_time;
-	if(posy<Aquarium::MAX_Y-20){
-		posy++;
-	};
-	Point P(posx,posy);
-	this->setPosition(P);
+	std::string direction = "Down";
+	Entity::move(sec_time,direction);
 }

@@ -1,5 +1,6 @@
 #include "../includes/Entity.hpp"
 #include "../includes/Point.hpp"
+#include <string>
 
 Entity::Entity() {
 	position.setX(0);
@@ -32,6 +33,20 @@ void Entity::setVelocity(int _velocity) {
 }
 
 // methods
-void Entity::move() {
+void Entity::move(double sec_time, std::string direction) {
+	double posx = this->position.getX();
+	double posy = this->position.getY();
+	double v = velocity*sec_time;
+	if((direction=="Down")&&(posy<460)){
+		posy++;
+	}else if((direction=="Up")&&(posy>58)){
+		posy-=v;
+	}else if((direction=="Right")&&(posx<627)){
+		posx++;
+	} else if((direction=="Left")&&(posx>1)){
+		posx-=v;
+	};
+	Point P(posx,posy);
+	this->setPosition(P);
 	
 }

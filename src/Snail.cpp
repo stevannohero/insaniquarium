@@ -1,29 +1,19 @@
 #include "../includes/Snail.hpp"
 
 Snail::Snail():Entity(300, 448){
-	
+	isFacingRight = 0;
+};
+
+void Snail::setDirection(int direct){
+	isFacingRight = direct;
 };
 
 void Snail::move(double sec_time){
-	int isRight = 1;
-	double posx = this->getPosition().getX();
-	double posy = this->getPosition().getY();
-	double v = getVelocity()*sec_time;
-	if(posx<608){
-		posx++;
-	};
-	/*if(isRight==0){
-		posx -= v;
-		if(posx==32){
-			isRight=1;
-		};
+	if(isFacingRight==0){
+		std::string direction="Left";
+		Entity::move(sec_time,direction);
 	}else{
-		posx++;
-		if(posx>608){
-			isRight=0;
-		};
-	};*/
-
-	Point P(posx,posy);
-	this->setPosition(P);
+		std::string direction="Right";
+		Entity::move(sec_time,direction);
+	}
 };
