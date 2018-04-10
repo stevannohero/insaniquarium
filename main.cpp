@@ -131,6 +131,12 @@ int main( int argc, char* args[] )
             aquarium.coins[i]->move(sec_since_last);
             i++;
         }
+        for (int i=nFoods-1; i>=0; i--) {
+            if (aquarium.foods[i]->getPosition().getY() >= 460) {
+                aquarium.foods.remove(aquarium.foods[i]);
+                nFoods--;
+            }
+        }
         for (int i=0; i<nFoods; i++) {
             draw_image("img/fish_food.png", aquarium.foods[i]->getPosition().getX(), aquarium.foods[i]->getPosition().getY());
             aquarium.foods[i]->move(sec_since_last);
