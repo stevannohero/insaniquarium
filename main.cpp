@@ -73,6 +73,7 @@ int main( int argc, char* args[] )
             // g untuk spawn guppy
             case SDLK_g:
                 aquarium.guppies.add(new Guppy());
+                aquarium.coins.add(new Coin());
                 nGuppies++;
                 break;
             }
@@ -103,6 +104,8 @@ int main( int argc, char* args[] )
         int i=0;
         while (i < nGuppies) {
             draw_image("img/guppy_1.png", aquarium.guppies[i]->getPosition().getX(), aquarium.guppies[i]->getPosition().getY());
+            draw_image("img/coin_gold.png", aquarium.coins[i]->getPosition().getX(), aquarium.coins[i]->getPosition().getY());
+            aquarium.coins[i]->move(sec_since_last);
             i++;
         }
        

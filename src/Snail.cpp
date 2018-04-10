@@ -1,8 +1,6 @@
 #include "../includes/Snail.hpp"
-#include "../includes/Aquarium.hpp"
-#include "../oop.hpp"
 
-Snail::Snail():Entity(Aquarium::MAX_X/2, Aquarium::MAX_Y-32){
+Snail::Snail():Entity(300, 448){
 	
 };
 
@@ -11,9 +9,8 @@ void Snail::move(double sec_time){
 	double posx = this->getPosition().getX();
 	double posy = this->getPosition().getY();
 	double v = getVelocity()*sec_time;
-	if(posx<Aquarium::MAX_X-32){
+	if(posx<608){
 		posx++;
-		cout << posx << endl;
 	};
 	/*if(isRight==0){
 		posx -= v;

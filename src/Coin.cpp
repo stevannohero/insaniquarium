@@ -5,7 +5,7 @@ Coin::Coin():Entity(Aquarium::MAX_X/2, 100) {
 	value = 0;
 }
 
-Coin::Coin(int _val) {
+Coin::Coin(int x, int y, int _val):Entity(x,y) {
 	value = _val;
 }
 

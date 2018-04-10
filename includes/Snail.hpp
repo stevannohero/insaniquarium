@@ -11,19 +11,16 @@
 
 
 #include "Entity.hpp"
-#include "Snail.hpp"
 #include "Point.hpp"
-#include "Aquarium.hpp"
 
-
-class Snail : public Entity {
+class Snail: public Entity {
 	public:
 
 	///default ctor
 	Snail();
 
 	///method gerak Snail. virtual dari method move di Entity
-	void move(double sec_time);		
+	void virtual move(double sec_time);		
 
 };
 

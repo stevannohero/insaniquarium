@@ -19,7 +19,7 @@ class Coin : public Entity {
 	Coin();
 
 	///ctor dengan paramater
-	Coin(int);
+	Coin(int x, int y, int val);
 
 	// setter and getter
 
