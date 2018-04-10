@@ -23,7 +23,7 @@ class Food : public Entity {
 	Food(int, int);
 
 	///method untuk pergerakan makanan
-	virtual void move();
+	void move(double sec_time);
 
 	private:
 	int a,b;

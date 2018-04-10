@@ -14,11 +14,15 @@ int main( int argc, char* args[] )
     Snail snail1;
     Coin coin1;
     int nGuppies = 1;
+    int nFoods = 0;
 
     // Menghitung FPS
     int frames_passed = 0;
     double fpc_start = time_since_start();
     std::string fps_text = "FPS: 0";
+
+    int mouseX;
+    int mouseY;
 
     // Posisi ikan
     double cy = Aquarium::MAX_Y / 2;
@@ -79,6 +83,25 @@ int main( int argc, char* args[] )
             }
         }
 
+        // Proses masukan mouse
+        if (getMouseClick()) {
+            aquarium.foods.add(new Food(getMouseX(), getMouseY()));
+            nFoods++;
+        }
+        SDL_Event e;
+        while( SDL_PollEvent( &e ) != 0 )
+        {
+            draw_text("Panah untuk bergerak, r untuk reset, x untuk keluar, g untuk spawn guppy", 18, 10, 100, 0, 0, 0);
+            if (e.type == SDL_MOUSEMOTION && e.motion.state & SDL_BUTTON_LMASK) {
+                int mouseX = e.motion.x;
+                int mouseY = e.motion.y;
+                std::string s = "X: " + to_string(mouseX) + " Y: " + to_string(mouseY);
+                draw_text(s, 18, 10, 100, 0, 0, 0);
+                aquarium.foods.add(new Food(mouseX, mouseY));
+                nFoods++;
+            }
+        }
+
         // Update FPS setiap detik
         frames_passed++;
         if (now - fpc_start > 1) {
@@ -107,6 +130,10 @@ int main( int argc, char* args[] )
             draw_image("img/coin_gold.png", aquarium.coins[i]->getPosition().getX(), aquarium.coins[i]->getPosition().getY());
             aquarium.coins[i]->move(sec_since_last);
             i++;
+        }
+        for (int i=0; i<nFoods; i++) {
+            draw_image("img/fish_food.png", aquarium.foods[i]->getPosition().getX(), aquarium.foods[i]->getPosition().getY());
+            aquarium.foods[i]->move(sec_since_last);
         }
        
         update_screen();

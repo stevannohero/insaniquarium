@@ -124,10 +124,16 @@ void update_screen() {
 bool quit = false;
 std::set<SDL_Keycode> pressedKeys;
 std::set<SDL_Keycode> tappedKeys;
+bool click = false;
+int mouseX = 0;
+int mouseY = 0;
 
 void handle_input() {
     SDL_Event e;
     if (!tappedKeys.empty()) tappedKeys.clear();
+    click = false;
+    mouseX = 0;
+    mouseY = 0;
     while( SDL_PollEvent( &e ) != 0 )
         {
             if ( e.type == SDL_QUIT ) {
@@ -137,6 +143,10 @@ void handle_input() {
                 tappedKeys.insert(e.key.keysym.sym);
             } else if (e.type == SDL_KEYUP) {
                 pressedKeys.erase(e.key.keysym.sym);
+            } else if (e.type == SDL_MOUSEBUTTONDOWN) {
+                click = true;
+                mouseX = e.motion.x;
+                mouseY = e.motion.y;
             }
         }
 }
@@ -151,5 +161,17 @@ const std::set<SDL_Keycode>& get_pressed_keys() {
 
 const std::set<SDL_Keycode>& get_tapped_keys() {
     return tappedKeys;
+}
+
+bool getMouseClick() {
+    return click;
+}
+
+int getMouseX() {
+    return mouseX;
+}
+
+int getMouseY() {
+    return mouseY;
 }
 
