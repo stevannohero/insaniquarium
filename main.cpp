@@ -12,6 +12,7 @@ int main( int argc, char* args[] )
 
     Aquarium aquarium;
     Snail snail1;
+    Coin coin1;
     int nGuppies = 1;
 
     // Menghitung FPS
@@ -90,16 +91,18 @@ int main( int argc, char* args[] )
 
         // Gambar ikan di posisi yang tepat.
         snail1.move(sec_since_last);
+        coin1.move(sec_since_last);
         clear_screen();
         draw_image("img/background.jpg", 320, 269);
         draw_text("Panah untuk bergerak, r untuk reset, x untuk keluar, g untuk spawn guppy", 18, 10, 10, 0, 0, 0);
         draw_text(fps_text, 18, 10, 30, 0, 0, 0);
-        draw_image("img/ikan.png", cx, cy);
+        draw_image("img/guppy_3.png", cx, cy);
         draw_image("img/snail.png", snail1.getPosition().getX() , snail1.getPosition().getY());
+        draw_image("img/coin_gold.png", coin1.getPosition().getX() , coin1.getPosition().getY());
         
         int i=0;
         while (i < nGuppies) {
-            draw_image("img/ikan.png", aquarium.guppies[i]->getPosition().getX(), aquarium.guppies[i]->getPosition().getY());
+            draw_image("img/guppy_1.png", aquarium.guppies[i]->getPosition().getX(), aquarium.guppies[i]->getPosition().getY());
             i++;
         }
        

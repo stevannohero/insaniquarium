@@ -34,7 +34,7 @@ class Aquarium {
 	static const int MAX_Y = 480;	///< max nilai Y untuk matriks
 	LinkedList<Guppy*> guppies; 	///< list yang menyimpan seluruh entitas ikan
 	LinkedList<Piranha*> piranhas; 	///< list yang menyimpan seluruh entitas ikan
-	Snail* snail;					///< siput
+	//LinkedList<Snail> snails;		///< siput
 	LinkedList<Food*> foods;		///< list yang menyimpan seluruh entitas makanan ikan
 	LinkedList<Coin*> coins;		///< list yang menyimpan seluruh entitas koin
 };

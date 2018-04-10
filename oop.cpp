@@ -96,6 +96,7 @@ void draw_image(std::string filename, int x, int y) {
     SDL_BlitSurface(s, NULL, gScreenSurface, &dest);
 }
 
+
 void draw_text(std::string text, int font_size, int x, int y, unsigned char r, unsigned char g, unsigned char b) {
     if (loadedFontSizes.count(font_size) < 1) {
         loadedFontSizes[font_size] = TTF_OpenFont(FONT_NAME, font_size);
@@ -151,3 +152,4 @@ const std::set<SDL_Keycode>& get_pressed_keys() {
 const std::set<SDL_Keycode>& get_tapped_keys() {
     return tappedKeys;
 }
+
