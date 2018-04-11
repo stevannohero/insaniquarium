@@ -19,24 +19,23 @@
 #include "Point.hpp"
 #include "LinkedList.hpp"
 
+class Snail;
+
 class Aquarium {
 	public:
 	Aquarium();
+	static int nGuppies;
+	static int nPiranhas;
+	static int nFoods;
+	static int nCoins;
 
-	// methods
-
-	///Method untuk mendapatkan suatu entitas tertentu dengan jarak terdekat dari objek
-	template<class T>
-	T getClosestEntity(T);
-
-	public:
 	static const int MAX_X = 640; 	///< max nilai X untuk matriks
 	static const int MAX_Y = 480;	///< max nilai Y untuk matriks
-	LinkedList<Guppy*> guppies; 	///< list yang menyimpan seluruh entitas ikan
-	LinkedList<Piranha*> piranhas; 	///< list yang menyimpan seluruh entitas ikan
-	Snail* snail;					///< siput
-	LinkedList<Food*> foods;		///< list yang menyimpan seluruh entitas makanan ikan
-	LinkedList<Coin*> coins;		///< list yang menyimpan seluruh entitas koin
+	static LinkedList<Guppy*> guppies; 	///< list yang menyimpan seluruh entitas ikan
+	static LinkedList<Piranha*> piranhas; 	///< list yang menyimpan seluruh entitas ikan
+	static Snail* snail;					///< siput
+	static LinkedList<Food*> foods;		///< list yang menyimpan seluruh entitas makanan ikan
+	static LinkedList<Coin*> coins;		///< list yang menyimpan seluruh entitas koin
 };
 
 

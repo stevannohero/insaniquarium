@@ -11,7 +11,9 @@ int main( int argc, char* args[] )
     init();
 
     Aquarium aquarium;
-    Snail snail1;
+    int nGuppies = 1;
+    int nFoods = 0;
+    int nCoins = 0;
 
     // Menghitung FPS
     int frames_passed = 0;
@@ -73,15 +75,18 @@ int main( int argc, char* args[] )
                 break;
             // g untuk spawn guppy
             case SDLK_g:
-                aquarium.guppies.add(new Guppy());
-                aquarium.coins.add(new Coin());
+                Aquarium::guppies.add(new Guppy());
+                Aquarium::nGuppies++;
+                Aquarium::coins.add(new Coin());
+                Aquarium::nCoins++;
                 break;
             }
         }
 
         // Proses masukan mouse
         if (getMouseClick()) {
-            aquarium.foods.add(new Food(getMouseX(), getMouseY()));
+            Aquarium::foods.add(new Food(getMouseX(), getMouseY()));
+            Aquarium::nFoods++;
         }
         SDL_Event e;
         while( SDL_PollEvent( &e ) != 0 )
@@ -108,33 +113,38 @@ int main( int argc, char* args[] )
         }
 
         // Gambar ikan di posisi yang tepat.
-        snail1.move(sec_since_last);
         clear_screen();
         draw_image("img/background.jpg", 320, 269);
         draw_text("Panah untuk bergerak, r untuk reset, x untuk keluar, g untuk spawn guppy", 18, 10, 10, 0, 0, 0);
         draw_text(fps_text, 18, 10, 30, 0, 0, 0);
-        draw_image("img/guppy_3.png", cx, cy);
-        draw_image("img/snail.png", snail1.getPosition().getX() , snail1.getPosition().getY());
+        // draw_image("img/guppy_3.png", cx, cy);
         
         // Update seluruh entitas
-        int i=0;
-        while (aquarium.guppies[i] != NULL) {
-            draw_image("img/guppy_1.png", aquarium.guppies[i]->getPosition().getX(), aquarium.guppies[i]->getPosition().getY());
+        // Guppies
+        for (int i=0; i<Aquarium::nGuppies; i++) {
+            draw_image("img/guppy_1.png", Aquarium::guppies[i]->getPosition().getX(),  Aquarium::guppies[i]->getPosition().getY());
             // guppy move
+        }
+        // Foods
+        for (int i=Aquarium::nFoods-1; i>=0; i--) {
+            if (Aquarium::foods[i]->getPosition().getY() >= 460) {
+                aquarium.foods.remove(Aquarium::foods[i]);
+                Aquarium::nFoods--;
+            }
+        }
+        for (int i=0; i<Aquarium::nFoods; i++) {
+            draw_image("img/fish_food.png",  Aquarium::foods[i]->getPosition().getX(),  Aquarium::foods[i]->getPosition().getY());
+            Aquarium::foods[i]->move(sec_since_last);
+        }
+        // Coins
+        for (int i=0; i<Aquarium::nCoins; i++) {
+            draw_image("img/coin_gold.png", Aquarium::coins[i]->getPosition().getX(), Aquarium::coins[i]->getPosition().getY());
+            Aquarium::coins[i]->move(sec_since_last);
             i++;
         }
-        i=0;
-        while (aquarium.foods[i] != NULL) {
-            draw_image("img/fish_food.png", aquarium.foods[i]->getPosition().getX(), aquarium.foods[i]->getPosition().getY());
-            aquarium.foods[i]->move(sec_since_last);
-            i++;
-        }
-        i=0;
-        while (aquarium.coins[i] != NULL) {
-            draw_image("img/coin_gold.png", aquarium.coins[i]->getPosition().getX(), aquarium.coins[i]->getPosition().getY());
-            aquarium.coins[i]->move(sec_since_last);
-            i++;
-        }
+        // // Snail
+        draw_image("img/snail.png", Aquarium::snail->getPosition().getX(), Aquarium::snail->getPosition().getY());
+        Aquarium::snail->move(sec_since_last);
        
         update_screen();
     }

@@ -12,6 +12,8 @@
 
 #include "Entity.hpp"
 #include "Point.hpp"
+#include "Coin.hpp"
+#include "Aquarium.hpp"
 
 class Snail: public Entity {
 	public:
