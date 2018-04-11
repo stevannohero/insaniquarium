@@ -11,7 +11,6 @@ int main( int argc, char* args[] )
     init();
 
     Aquarium aquarium;
-    Snail snail1;
     int money = 1000;
     std::string money_text = "Uang anda : 0";
     int nGuppies = 1;
@@ -94,20 +93,6 @@ int main( int argc, char* args[] )
             aquarium.foods.add(new Food(getMouseX(), getMouseY()));
             money = money - 50;
         }
-        SDL_Event e;
-        while( SDL_PollEvent( &e ) != 0 )
-        {
-            draw_text("Panah untuk bergerak, r untuk reset, x untuk keluar, g untuk spawn guppy", 18, 10, 100, 0, 0, 0);
-            if (e.type == SDL_MOUSEMOTION && e.motion.state & SDL_BUTTON_LMASK) {
-                int mouseX = e.motion.x;
-                int mouseY = e.motion.y;
-                std::string s = "X: " + to_string(mouseX) + " Y: " + to_string(mouseY);
-                draw_text(s, 18, 10, 100, 0, 0, 0);
-                aquarium.foods.add(new Food(mouseX, mouseY));
-            }
-            Aquarium::foods.add(new Food(getMouseX(), getMouseY()));
-            Aquarium::nFoods++;
-        }
 
         // Update FPS setiap detik
         frames_passed++;
@@ -127,14 +112,7 @@ int main( int argc, char* args[] )
         draw_image("img/background.jpg", 320, 269);
         draw_text("Panah untuk bergerak, r untuk reset, x untuk keluar, g untuk spawn guppy", 18, 10, 10, 0, 0, 0);
         draw_text(fps_text, 18, 10, 30, 0, 0, 0);
-        draw_image("img/guppy_3.png", cx, cy);
-        draw_image("img/snail.png", snail1.getPosition().getX() , snail1.getPosition().getY());
         draw_text(money_text,18,10,50,0,0,0);
-
-    // Update seluruh entitas
-        int i = 0;
-        while (aquarium.guppies[i] != NULL) {
-            draw_image("img/guppy_1.png", aquarium.guppies[i]->getPosition().getX(), aquarium.guppies[i]->getPosition().getY());
 
         // Update seluruh entitas
         // Guppies

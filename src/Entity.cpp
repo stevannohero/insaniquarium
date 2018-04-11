@@ -37,12 +37,14 @@ void Entity::move(double sec_time, double x, double y) {
 	double posx = this->position.getX();
 	double posy = this->position.getY();
 	double v = velocity * sec_time;
+	
 	if ((y < 0) && (posy < 460)){
 		posy -= y * v;
 	} else if ((y >= 0) && (posy > 58)){
 		posy += y * v;
-	} else if ((x >= 0) && (posx < 627)){
-		posx -= x * v;
+	} 
+	if ((x >= 0) && (posx < 627)){
+		posx += x * v;
 	} else if ((x < 0) && (posx > 1)){
 		posx += x * v;
 	};

@@ -24,5 +24,4 @@ void Coin::setValue(int _val) {
 
 void Coin::move(double sec_time) {
 	Entity::move(sec_time, 0, -1);
-	std::cout << getPosition().getX() << " " << getPosition().getY() << std::endl;
 }

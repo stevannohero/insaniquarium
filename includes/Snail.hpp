@@ -14,6 +14,7 @@
 #include "Point.hpp"
 #include "Coin.hpp"
 #include "Aquarium.hpp"
+#include <iostream>
 
 class Snail: public Entity {
 	public:
