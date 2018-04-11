@@ -105,7 +105,6 @@ int main( int argc, char* args[] )
         draw_image("img/background.jpg", 320, 269);
         draw_text("Panah untuk bergerak, r untuk reset, x untuk keluar, g untuk spawn guppy", 18, 10, 10, 0, 0, 0);
         draw_text(fps_text, 18, 10, 30, 0, 0, 0);
-        // draw_image("img/guppy_3.png", cx, cy);
         
         // Update seluruh entitas
         // Guppies

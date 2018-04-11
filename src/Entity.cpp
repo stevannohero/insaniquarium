@@ -5,13 +5,13 @@
 Entity::Entity() {
 	position.setX(0);
 	position.setY(0);
-	velocity = 10.0;
+	velocity = 80.0;
 } // position = (0,0)
 
 Entity::Entity(int _x, int _y) {
 	position.setX(_x);
 	position.setY(_y);
-	velocity = 10;
+	velocity = 80;
 } // position = (x,y)
 
 // setter and getter
@@ -33,19 +33,20 @@ void Entity::setVelocity(int _velocity) {
 }
 
 // methods
-void Entity::move(double sec_time, std::string direction) {
+void Entity::move(double sec_time, double x, double y) {
 	double posx = this->position.getX();
 	double posy = this->position.getY();
 	double v = velocity * sec_time;
-	if ((direction == "Down") && (posy < 460)){
-		posy++;
-	} else if ((direction == "Up") && (posy > 58)){
-		posy -= v;
-	} else if ((direction == "Right") && (posx < 627)){
-		posx++;
-	} else if ((direction == "Left") && (posx > 1)){
-		posx -= v;
+	if ((y < 0) && (posy < 460)){
+		posy -= y * v;
+	} else if ((y >= 0) && (posy > 58)){
+		posy += y * v;
+	} else if ((x >= 0) && (posx < 627)){
+		posx -= x * v;
+	} else if ((x < 0) && (posx > 1)){
+		posx += x * v;
 	};
+
 	Point P(posx,posy);
 	this->setPosition(P);
 }

@@ -13,7 +13,7 @@
 #include "Point.hpp"
 #include <cstdlib>
 #include <string>
-
+#include <iostream>
 
 // Abstract Base Class
 class Entity {
@@ -41,7 +41,7 @@ class Entity {
 
 	// methods
 	///method untuk objek bergerak
-	virtual void move(double sec_time, std::string direction);
+	virtual void move(double sec_time, double x, double y);
 	
 	private:
 	Point position;		///< menyimpan data posisi objek

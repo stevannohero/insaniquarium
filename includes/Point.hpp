@@ -16,7 +16,7 @@ class Point {
 	Point();
 
 	///ctor dengan parameter
-	Point(int, int);
+	Point(double, double);
 
 	///cctor
 	Point(const Point&);
@@ -27,19 +27,19 @@ class Point {
 	// setter and getter
 
 	///getter X
-	int getX() const;
+	double getX() const;
 
 	///getter Y
-	int getY() const;
+	double getY() const;
 
 	///setter X
-	void setX(int);
+	void setX(double);
 
 	///setter Y
-	void setY(int);
+	void setY(double);
 	
 	private:
-	int x, y; 
+	double x, y; 
 };
 
 #endif

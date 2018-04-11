@@ -11,6 +11,7 @@
 #include "Entity.hpp"
 #include "Coin.hpp"
 #include "Point.hpp"
+#include <iostream>
 
 class Coin : public Entity {
 	public:
@@ -19,7 +20,7 @@ class Coin : public Entity {
 	Coin();
 
 	///ctor dengan paramater
-	Coin(int x, int y, int val);
+	Coin(double x, double y, int val);
 
 	// setter and getter
 

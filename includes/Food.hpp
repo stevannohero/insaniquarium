@@ -20,7 +20,7 @@ class Food : public Entity {
 	Food();
 	
 	///ctor dengan paramater
-	Food(int, int);
+	Food(double, double);
 
 	///method untuk pergerakan makanan
 	void move(double sec_time);
