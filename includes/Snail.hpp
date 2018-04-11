@@ -12,12 +12,17 @@
 
 #include "Entity.hpp"
 #include "Point.hpp"
+#include "Coin.hpp"
+#include "Aquarium.hpp"
 
 class Snail: public Entity {
 	public:
 
 	///default ctor
 	Snail();
+
+	//get arah siput
+	int getDirection();
 
 	//set arah siput
 	void setDirection(int);
