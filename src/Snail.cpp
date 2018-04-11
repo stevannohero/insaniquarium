@@ -3,7 +3,7 @@
 
 Snail::Snail():Entity(300, 448){
 	isFacingRight = 0;
-	Entity::setVelocity(2);
+	Entity::setVelocity(40);
 };
 
 int Snail::getDirection() {
@@ -42,10 +42,10 @@ void Snail::move(double sec_time){
 	if (coinIdx != -1) {
 		if (Aquarium::coins[coinIdx]->getPosition().getX() <= snailX) {
 			setDirection(0);
-			Entity::move(sec_time, "Left");
+			Entity::move(sec_time, -1, 0);
 		} else {
 			setDirection(1);
-			Entity::move(sec_time, "Right");
+			Entity::move(sec_time, 1, 0);
 		}
 		
 		// Eat coin

@@ -137,6 +137,7 @@ int main( int argc, char* args[] )
         draw_text("Panah untuk bergerak, r untuk reset, x untuk keluar, g untuk spawn guppy", 18, 10, 10, 0, 0, 0);
         draw_text(fps_text, 18, 10, 30, 0, 0, 0);
 <<<<<<< HEAD
+<<<<<<< HEAD
         draw_image("img/guppy_3.png", cx, cy);
         draw_image("img/snail.png", snail1.getPosition().getX() , snail1.getPosition().getY());
         draw_text(money_text,18,10,50,0,0,0);
@@ -147,6 +148,8 @@ int main( int argc, char* args[] )
             draw_image("img/guppy_1.png", aquarium.guppies[i]->getPosition().getX(), aquarium.guppies[i]->getPosition().getY());
 =======
         // draw_image("img/guppy_3.png", cx, cy);
+=======
+>>>>>>> 09040b08386f63039d1a0bc03e7e6a415b6da0e2
         
         // Update seluruh entitas
         // Guppies

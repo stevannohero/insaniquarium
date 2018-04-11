@@ -5,7 +5,7 @@ Point::Point() {
 	y = 0;
 }
 
-Point::Point(int _x, int _y) {
+Point::Point(double _x, double _y) {
 	x = _x;
 	y = _y;
 }
@@ -23,18 +23,18 @@ Point& Point::operator= (const Point& _p) {
 }
 
 // setter and getter
-int Point::getX() const {
+double Point::getX() const {
 	return x;
 }
 
-int Point::getY() const {
+double Point::getY() const {
 	return y;
 }
 
-void Point::setX(int _x) {
+void Point::setX(double _x) {
 	x = _x;
 }
 
-void Point::setY(int _y) {
+void Point::setY(double _y) {
 	y = _y;
 }
