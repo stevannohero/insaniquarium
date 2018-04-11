@@ -13,7 +13,6 @@
 #include "Point.hpp"
 #include <cstdlib>
 #include <string>
-#include <iostream>
 
 // Abstract Base Class
 class Entity {

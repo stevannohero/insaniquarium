@@ -11,7 +11,6 @@
 #include "Entity.hpp"
 #include "Coin.hpp"
 #include "Point.hpp"
-#include <iostream>
 
 class Coin : public Entity {
 	public:
