@@ -15,7 +15,6 @@
 #include "Point.hpp"
 #include "Coin.hpp"
 
-
 class Guppy : public Fish, public Entity {
 	public:
 
@@ -27,11 +26,13 @@ class Guppy : public Fish, public Entity {
 	///method untuk makan guppy
 	void eat();
 
-	///method untuk mengetahui tahap pertumbuhan Guppy
+	// method untuk mengetahui tahap pertumbuhan Guppy
 	void checkGrowth();
 
-	///method untuk menghasilkan koin
+	// method untuk menghasilkan koin
 	void spawnCoin();
+
+	void move(double sec_time);
 };
 
 #endif

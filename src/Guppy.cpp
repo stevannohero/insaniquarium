@@ -1,11 +1,14 @@
 #include "../includes/Guppy.hpp"
 #include "../includes/Aquarium.hpp"
 
+#include <time.h>
+
 Guppy::Guppy() : Fish(1, 10, 10, 10, 10){
     int x = rand() % Aquarium::MAX_X;
     int y = rand() % Aquarium::MAX_Y;
     setPosition(Point(x, y));
 }
+
 // methods
 void Guppy::eat() {
     /*if (getClosestEntity(Food) == this.getposition()) {
@@ -48,4 +51,17 @@ void Guppy::checkGrowth() {
 
 void Guppy::spawnCoin() {
     Coin(coinValue);
+}
+
+void Guppy::move(double sec_time) {
+    std::string directions[4] = {"Up", "Down", "Left", "Right"};
+
+    srand (time(NULL));
+
+    int randDir = rand() % 4;
+
+    // while(randDir > 0) {
+    //     Entity::move(sec_time, directions[randDir]);
+    //     usleep(3000000);
+    // }
 }

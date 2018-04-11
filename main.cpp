@@ -124,20 +124,23 @@ int main( int argc, char* args[] )
         draw_image("img/snail.png", snail1.getPosition().getX() , snail1.getPosition().getY());
         draw_image("img/coin_gold.png", coin1.getPosition().getX() , coin1.getPosition().getY());
         
-        int i=0;
+        int i = 0;
         while (i < nGuppies) {
             draw_image("img/guppy_1.png", aquarium.guppies[i]->getPosition().getX(), aquarium.guppies[i]->getPosition().getY());
             draw_image("img/coin_gold.png", aquarium.coins[i]->getPosition().getX(), aquarium.coins[i]->getPosition().getY());
             aquarium.coins[i]->move(sec_since_last);
+            aquarium.guppies[i]->move(sec_since_last);
             i++;
         }
-        for (int i=nFoods-1; i>=0; i--) {
+
+        for (int i = nFoods - 1; i >= 0; i--) {
             if (aquarium.foods[i]->getPosition().getY() >= 460) {
                 aquarium.foods.remove(aquarium.foods[i]);
                 nFoods--;
             }
         }
-        for (int i=0; i<nFoods; i++) {
+
+        for (int i = 0; i < nFoods; i++) {
             draw_image("img/fish_food.png", aquarium.foods[i]->getPosition().getX(), aquarium.foods[i]->getPosition().getY());
             aquarium.foods[i]->move(sec_since_last);
         }
