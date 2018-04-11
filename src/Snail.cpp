@@ -1,5 +1,5 @@
 #include "../includes/Snail.hpp"
-#include "math.h"
+#include <cmath>
 
 Snail::Snail():Entity(300, 448){
 	isFacingRight = 0;
@@ -41,7 +41,7 @@ void Snail::move(double sec_time){
 				Entity::move(sec_time, 1, 0);
 			}
 		}
-		
+
 		// Eat coin
 		if (dist < 40) {
 			Aquarium::coins.remove(Aquarium::coins[coinIdx]);

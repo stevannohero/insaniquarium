@@ -16,6 +16,8 @@ int main( int argc, char* args[] )
     int nGuppies = 1;
     int nFoods = 0;
     int nCoins = 0;
+    std::string egg_text = "Telur anda : 0";
+    int egg_amount = 0;
 
     // Menghitung FPS
     int frames_passed = 0;
@@ -75,6 +77,13 @@ int main( int argc, char* args[] )
             case SDLK_x:
                 running = false;
                 break;
+            // t untuk telur
+            case SDLK_t:
+                if (money > 800) {
+                    money = money - 800;
+                    egg_amount++;
+                }
+                break;
             // g untuk spawn guppy
             case SDLK_g:
                 aquarium.guppies.add(new Guppy());
@@ -113,6 +122,7 @@ int main( int argc, char* args[] )
         draw_text("Panah untuk bergerak, r untuk reset, x untuk keluar, g untuk spawn guppy", 18, 10, 10, 0, 0, 0);
         draw_text(fps_text, 18, 10, 30, 0, 0, 0);
         draw_text(money_text,18,10,50,0,0,0);
+        draw_text(egg_text,18,10,70,0,0,0);
 
         // Update seluruh entitas
         // Guppies
@@ -142,6 +152,10 @@ int main( int argc, char* args[] )
             strm << "Uang anda : " ;
             strm << money;
             money_text = strm.str();
+            std::ostringstream stre;
+            stre << "Telur anda : ";
+            stre << egg_amount;
+            egg_text = stre.str();
         }
         // // Snail
         if (Aquarium::snail->getDirection() == 0) {
