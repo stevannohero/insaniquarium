@@ -11,15 +11,12 @@ int main( int argc, char* args[] )
     init();
 
     Aquarium aquarium;
-<<<<<<< HEAD
     Snail snail1;
     int money = 1000;
     std::string money_text = "Uang anda : 0";
-=======
     int nGuppies = 1;
     int nFoods = 0;
     int nCoins = 0;
->>>>>>> e6f979273b08def5c824808682aaf83179dd4e23
 
     // Menghitung FPS
     int frames_passed = 0;
@@ -81,23 +78,19 @@ int main( int argc, char* args[] )
                 break;
             // g untuk spawn guppy
             case SDLK_g:
-<<<<<<< HEAD
                 aquarium.guppies.add(new Guppy());
                 aquarium.coins.add(new Coin());
                 money = money - 100;
-=======
                 Aquarium::guppies.add(new Guppy());
                 Aquarium::nGuppies++;
                 Aquarium::coins.add(new Coin());
                 Aquarium::nCoins++;
->>>>>>> e6f979273b08def5c824808682aaf83179dd4e23
                 break;
             }
         }
 
         // Proses masukan mouse
         if (getMouseClick()) {
-<<<<<<< HEAD
             aquarium.foods.add(new Food(getMouseX(), getMouseY()));
             money = money - 50;
         }
@@ -112,10 +105,8 @@ int main( int argc, char* args[] )
                 draw_text(s, 18, 10, 100, 0, 0, 0);
                 aquarium.foods.add(new Food(mouseX, mouseY));
             }
-=======
             Aquarium::foods.add(new Food(getMouseX(), getMouseY()));
             Aquarium::nFoods++;
->>>>>>> e6f979273b08def5c824808682aaf83179dd4e23
         }
 
         // Update FPS setiap detik
@@ -136,8 +127,6 @@ int main( int argc, char* args[] )
         draw_image("img/background.jpg", 320, 269);
         draw_text("Panah untuk bergerak, r untuk reset, x untuk keluar, g untuk spawn guppy", 18, 10, 10, 0, 0, 0);
         draw_text(fps_text, 18, 10, 30, 0, 0, 0);
-<<<<<<< HEAD
-<<<<<<< HEAD
         draw_image("img/guppy_3.png", cx, cy);
         draw_image("img/snail.png", snail1.getPosition().getX() , snail1.getPosition().getY());
         draw_text(money_text,18,10,50,0,0,0);
@@ -146,16 +135,11 @@ int main( int argc, char* args[] )
         int i = 0;
         while (aquarium.guppies[i] != NULL) {
             draw_image("img/guppy_1.png", aquarium.guppies[i]->getPosition().getX(), aquarium.guppies[i]->getPosition().getY());
-=======
-        // draw_image("img/guppy_3.png", cx, cy);
-=======
->>>>>>> 09040b08386f63039d1a0bc03e7e6a415b6da0e2
-        
+
         // Update seluruh entitas
         // Guppies
         for (int i=0; i<Aquarium::nGuppies; i++) {
             draw_image("img/guppy_1.png", Aquarium::guppies[i]->getPosition().getX(),  Aquarium::guppies[i]->getPosition().getY());
->>>>>>> e6f979273b08def5c824808682aaf83179dd4e23
             // guppy move
         }
         // Foods
@@ -175,14 +159,12 @@ int main( int argc, char* args[] )
             Aquarium::coins[i]->move(sec_since_last);
             i++;
         }
-<<<<<<< HEAD
          if (money > -1000) {
             std::ostringstream strm;
             strm << "Uang anda : " ;
             strm << money;
             money_text = strm.str();
         }
-=======
         // // Snail
         if (Aquarium::snail->getDirection() == 0) {
             draw_image("img/snail.png", Aquarium::snail->getPosition().getX(), Aquarium::snail->getPosition().getY());
@@ -191,8 +173,7 @@ int main( int argc, char* args[] )
             draw_image("img/snail_R.png", Aquarium::snail->getPosition().getX(), Aquarium::snail->getPosition().getY());
         }
         Aquarium::snail->move(sec_since_last);
-       
->>>>>>> e6f979273b08def5c824808682aaf83179dd4e23
+
         update_screen();
     }
 
