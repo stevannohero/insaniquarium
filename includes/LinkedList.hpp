@@ -68,14 +68,22 @@ class LinkedList {
 	T get(int index) {
 		if(index == 0) {
 			/* Element ke 1 indexnya 0 */
-			return this->first->data;
+			if (this->first != NULL) {
+				return this->first->data;
+			} else {
+				return NULL;
+			}
 		} else {
 			/* Cari elemen ke-index */
 			node<T>* curr = this->first;
 			for(int i = 0; i < index; ++i) {
 				curr = curr->next;
 			}
-			return curr->data;
+			if (curr != NULL) {
+				return curr->data;
+			} else {
+				return NULL;
+			}
 		}
 	}
 

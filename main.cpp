@@ -12,9 +12,6 @@ int main( int argc, char* args[] )
 
     Aquarium aquarium;
     Snail snail1;
-    Coin coin1;
-    int nGuppies = 1;
-    int nFoods = 0;
 
     // Menghitung FPS
     int frames_passed = 0;
@@ -78,7 +75,6 @@ int main( int argc, char* args[] )
             case SDLK_g:
                 aquarium.guppies.add(new Guppy());
                 aquarium.coins.add(new Coin());
-                nGuppies++;
                 break;
             }
         }
@@ -86,7 +82,6 @@ int main( int argc, char* args[] )
         // Proses masukan mouse
         if (getMouseClick()) {
             aquarium.foods.add(new Food(getMouseX(), getMouseY()));
-            nFoods++;
         }
         SDL_Event e;
         while( SDL_PollEvent( &e ) != 0 )
@@ -98,7 +93,6 @@ int main( int argc, char* args[] )
                 std::string s = "X: " + to_string(mouseX) + " Y: " + to_string(mouseY);
                 draw_text(s, 18, 10, 100, 0, 0, 0);
                 aquarium.foods.add(new Food(mouseX, mouseY));
-                nFoods++;
             }
         }
 
@@ -115,31 +109,31 @@ int main( int argc, char* args[] )
 
         // Gambar ikan di posisi yang tepat.
         snail1.move(sec_since_last);
-        coin1.move(sec_since_last);
         clear_screen();
         draw_image("img/background.jpg", 320, 269);
         draw_text("Panah untuk bergerak, r untuk reset, x untuk keluar, g untuk spawn guppy", 18, 10, 10, 0, 0, 0);
         draw_text(fps_text, 18, 10, 30, 0, 0, 0);
         draw_image("img/guppy_3.png", cx, cy);
         draw_image("img/snail.png", snail1.getPosition().getX() , snail1.getPosition().getY());
-        draw_image("img/coin_gold.png", coin1.getPosition().getX() , coin1.getPosition().getY());
         
+        // Update seluruh entitas
         int i=0;
-        while (i < nGuppies) {
+        while (aquarium.guppies[i] != NULL) {
             draw_image("img/guppy_1.png", aquarium.guppies[i]->getPosition().getX(), aquarium.guppies[i]->getPosition().getY());
+            // guppy move
+            i++;
+        }
+        i=0;
+        while (aquarium.foods[i] != NULL) {
+            draw_image("img/fish_food.png", aquarium.foods[i]->getPosition().getX(), aquarium.foods[i]->getPosition().getY());
+            aquarium.foods[i]->move(sec_since_last);
+            i++;
+        }
+        i=0;
+        while (aquarium.coins[i] != NULL) {
             draw_image("img/coin_gold.png", aquarium.coins[i]->getPosition().getX(), aquarium.coins[i]->getPosition().getY());
             aquarium.coins[i]->move(sec_since_last);
             i++;
-        }
-        for (int i=nFoods-1; i>=0; i--) {
-            if (aquarium.foods[i]->getPosition().getY() >= 460) {
-                aquarium.foods.remove(aquarium.foods[i]);
-                nFoods--;
-            }
-        }
-        for (int i=0; i<nFoods; i++) {
-            draw_image("img/fish_food.png", aquarium.foods[i]->getPosition().getX(), aquarium.foods[i]->getPosition().getY());
-            aquarium.foods[i]->move(sec_since_last);
         }
        
         update_screen();
