@@ -21,6 +21,9 @@ class Snail: public Entity {
 	///default ctor
 	Snail();
 
+	//get arah siput
+	int getDirection();
+
 	//set arah siput
 	void setDirection(int);
 

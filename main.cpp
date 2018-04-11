@@ -88,18 +88,6 @@ int main( int argc, char* args[] )
             Aquarium::foods.add(new Food(getMouseX(), getMouseY()));
             Aquarium::nFoods++;
         }
-        SDL_Event e;
-        while( SDL_PollEvent( &e ) != 0 )
-        {
-            draw_text("Panah untuk bergerak, r untuk reset, x untuk keluar, g untuk spawn guppy", 18, 10, 100, 0, 0, 0);
-            if (e.type == SDL_MOUSEMOTION && e.motion.state & SDL_BUTTON_LMASK) {
-                int mouseX = e.motion.x;
-                int mouseY = e.motion.y;
-                std::string s = "X: " + to_string(mouseX) + " Y: " + to_string(mouseY);
-                draw_text(s, 18, 10, 100, 0, 0, 0);
-                aquarium.foods.add(new Food(mouseX, mouseY));
-            }
-        }
 
         // Update FPS setiap detik
         frames_passed++;
@@ -128,7 +116,7 @@ int main( int argc, char* args[] )
         // Foods
         for (int i=Aquarium::nFoods-1; i>=0; i--) {
             if (Aquarium::foods[i]->getPosition().getY() >= 460) {
-                aquarium.foods.remove(Aquarium::foods[i]);
+                Aquarium::foods.remove(Aquarium::foods[i]);
                 Aquarium::nFoods--;
             }
         }
@@ -143,7 +131,12 @@ int main( int argc, char* args[] )
             i++;
         }
         // // Snail
-        draw_image("img/snail.png", Aquarium::snail->getPosition().getX(), Aquarium::snail->getPosition().getY());
+        if (Aquarium::snail->getDirection() == 0) {
+            draw_image("img/snail.png", Aquarium::snail->getPosition().getX(), Aquarium::snail->getPosition().getY());
+        }
+        else {
+            draw_image("img/snail_R.png", Aquarium::snail->getPosition().getX(), Aquarium::snail->getPosition().getY());
+        }
         Aquarium::snail->move(sec_since_last);
        
         update_screen();

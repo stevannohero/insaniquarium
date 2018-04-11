@@ -6,6 +6,10 @@ Snail::Snail():Entity(300, 448){
 	Entity::setVelocity(2);
 };
 
+int Snail::getDirection() {
+	return isFacingRight;
+}
+
 void Snail::setDirection(int direct){
 	isFacingRight = direct;
 };
@@ -43,7 +47,6 @@ void Snail::move(double sec_time){
 			setDirection(1);
 			Entity::move(sec_time, "Right");
 		}
-		std::cout << dist << std::endl;
 		
 		// Eat coin
 		if (dist < 40) {
