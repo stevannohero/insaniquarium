@@ -12,6 +12,8 @@ int main( int argc, char* args[] )
 
     Aquarium aquarium;
     Snail snail1;
+    int money = 1000;
+    std::string money_text = "Uang anda : 0";
 
     // Menghitung FPS
     int frames_passed = 0;
@@ -75,6 +77,7 @@ int main( int argc, char* args[] )
             case SDLK_g:
                 aquarium.guppies.add(new Guppy());
                 aquarium.coins.add(new Coin());
+                money = money - 100;
                 break;
             }
         }
@@ -82,6 +85,7 @@ int main( int argc, char* args[] )
         // Proses masukan mouse
         if (getMouseClick()) {
             aquarium.foods.add(new Food(getMouseX(), getMouseY()));
+            money = money - 50;
         }
         SDL_Event e;
         while( SDL_PollEvent( &e ) != 0 )
@@ -102,10 +106,12 @@ int main( int argc, char* args[] )
             std::ostringstream strs;
             strs << "FPS: " ;
             strs << frames_passed/(now - fpc_start);
-            fps_text = strs.str();;
+            fps_text = strs.str();
             fpc_start = now;
             frames_passed = 0;
         }
+
+
 
         // Gambar ikan di posisi yang tepat.
         snail1.move(sec_since_last);
@@ -115,7 +121,8 @@ int main( int argc, char* args[] )
         draw_text(fps_text, 18, 10, 30, 0, 0, 0);
         draw_image("img/guppy_3.png", cx, cy);
         draw_image("img/snail.png", snail1.getPosition().getX() , snail1.getPosition().getY());
-        
+        draw_text(money_text,18,10,50,0,0,0);
+
     // Update seluruh entitas
         int i = 0;
         while (aquarium.guppies[i] != NULL) {
@@ -135,6 +142,12 @@ int main( int argc, char* args[] )
             draw_image("img/coin_gold.png", aquarium.coins[i]->getPosition().getX(), aquarium.coins[i]->getPosition().getY());
             aquarium.coins[i]->move(sec_since_last);
             i++;
+        }
+         if (money > -1000) {
+            std::ostringstream strm;
+            strm << "Uang anda : " ;
+            strm << money;
+            money_text = strm.str();
         }
         update_screen();
     }

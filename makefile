@@ -3,7 +3,7 @@ OBJS = main.cpp oop.cpp src/Aquarium.cpp src/Coin.cpp src/Entity.cpp src/Fish.cp
 
 CC = g++
 COMPILER_FLAGS = -std=c++11 -Wall -O2 -w
-LINKER_FLAGS = -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf
+LINKER_FLAGS = -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf
 OBJ_NAME = oopquarium
 all : $(OBJS)
 	$(CC) $(OBJS) $(COMPILER_FLAGS) $(LINKER_FLAGS) -o $(OBJ_NAME)
