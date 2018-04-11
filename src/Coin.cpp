@@ -24,5 +24,5 @@ void Coin::setValue(int _val) {
 
 void Coin::move(double sec_time) {
 	std::string direction = "Down";
-	Entity::move(sec_time,direction);
+	Entity::move(sec_time, direction);
 }

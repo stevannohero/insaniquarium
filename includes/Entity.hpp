@@ -41,7 +41,7 @@ class Entity {
 
 	// methods
 	///method untuk objek bergerak
-	void move(double sec_time, std::string direction);
+	virtual void move(double sec_time, std::string direction);
 	
 	private:
 	Point position;		///< menyimpan data posisi objek
