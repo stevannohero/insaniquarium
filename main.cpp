@@ -116,26 +116,26 @@ int main( int argc, char* args[] )
         draw_image("img/guppy_3.png", cx, cy);
         draw_image("img/snail.png", snail1.getPosition().getX() , snail1.getPosition().getY());
         
-        // Update seluruh entitas
-        int i=0;
+    // Update seluruh entitas
+        int i = 0;
         while (aquarium.guppies[i] != NULL) {
             draw_image("img/guppy_1.png", aquarium.guppies[i]->getPosition().getX(), aquarium.guppies[i]->getPosition().getY());
             // guppy move
+            // aquarium.guppies[i]->move(sec_since_last);
             i++;
         }
-        i=0;
+        i = 0;
         while (aquarium.foods[i] != NULL) {
             draw_image("img/fish_food.png", aquarium.foods[i]->getPosition().getX(), aquarium.foods[i]->getPosition().getY());
             aquarium.foods[i]->move(sec_since_last);
             i++;
         }
-        i=0;
+        i = 0;
         while (aquarium.coins[i] != NULL) {
             draw_image("img/coin_gold.png", aquarium.coins[i]->getPosition().getX(), aquarium.coins[i]->getPosition().getY());
             aquarium.coins[i]->move(sec_since_last);
             i++;
         }
-       
         update_screen();
     }
 
